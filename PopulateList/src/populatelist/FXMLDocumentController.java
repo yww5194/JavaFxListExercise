@@ -27,7 +27,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Button button;
     @FXML
-    private ListView<?> lvPeople;
+    private ListView<String> lvPeople;
     @FXML
     private TextField tfFirstName;
     @FXML
@@ -35,6 +35,8 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Button btnAddPerson;
   
+
+    
   @FXML
   private void handleButtonAction(ActionEvent event) {
     System.out.println("You clicked me!");
@@ -48,6 +50,13 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void handleBtnAddPersonClicked(MouseEvent event) {
+            // Build up full name
+    String fullName = tfFirstName.getText() + " " + tfLastName.getText();
+    // Debugging to be removed later
+    System.out.println(fullName);
+    // Debugging to be removed later
+    lvPeople.getItems().add(fullName);
+  
     }
   
 }
